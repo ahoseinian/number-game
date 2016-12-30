@@ -1,13 +1,25 @@
 import React, {Component} from 'react';
-import CurrentValue from '../number/Single';
+import NumberBlock from '../number/Single';
 import {connect} from 'react-redux';
+import classNames from 'classnames';
 
 class Display extends Component {
   render() {
-    const {current} = this.props.display;
+    const {current, target} = this.props.display;
+    const equalClass = classNames('display-1 text-xs-center', {'text-danger': current !== target});
     return (
       <div className="card p-1">
-        <CurrentValue num={current}/>
+        <div className="row">
+          <div className="col-xs-5">
+            <NumberBlock num={current}/>
+          </div>
+          <div className="col-xs-2">
+            <h1 className={equalClass}>=</h1>
+          </div>
+          <div className="col-xs-5">
+            <NumberBlock num={target} />
+          </div>
+        </div>
       </div>
     )
   }
