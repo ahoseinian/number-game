@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import {createStore, combineReducers} from 'redux';
 import {CHANGE_CURRENT_DISPLAY, CHANGE_CALCULATION_MODEL} from './actions';
 
 function display(state = {
@@ -31,4 +31,4 @@ function calculation(state = {
   return state
 }
 
-export default combineReducers({display, calculation});
+export default createStore(combineReducers({display, calculation}));

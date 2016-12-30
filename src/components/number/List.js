@@ -33,10 +33,10 @@ class List extends Component {
           </div>
         </div>
         <div className="col-xs-3">
-          <NumberButton num="+" clicked={this
+          <NumberButton num="+" active={this.props.model === 1} clicked={this
             .changeCalcModel
             .bind(this, 1)}/>
-          <NumberButton num="-" clicked={this
+          <NumberButton num="-" active={this.props.model === -1} clicked={this
             .changeCalcModel
             .bind(this, -1)}/>
         </div>
